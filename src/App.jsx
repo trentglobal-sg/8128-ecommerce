@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Header from "./Header";
 import ProductCard from "./ProductCard";
 
 export default function App() {
+
+  const [showNavbar, setShowNavBar] = useState(false);
+
   return <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
@@ -17,7 +21,7 @@ export default function App() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className={`collapse navbar-collapse ${showNavbar ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">Home</a>
